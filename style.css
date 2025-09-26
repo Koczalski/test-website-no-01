@@ -35,6 +35,7 @@ body {
   --color-background: #FFFFFF;
   --color-border: #E0E0E0;
   --color-focus-ring: #007BFF;
+  --color-error: #D32F2F;
 
   --spacing-xs: 0.25rem; /* 4px */
   --spacing-sm: 0.5rem;  /* 8px */
@@ -209,6 +210,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding: var(--spacing-xxl) 0;
   border-bottom: 1px solid var(--color-border);
 }
+.content-section:last-of-type {
+    border-bottom: none;
+}
 .content-section:nth-of-type(odd) {
   background-color: var(--color-secondary);
 }
@@ -346,6 +350,72 @@ tbody tr:nth-child(even) {
 }
 .recruitment-info a:hover {
     color: var(--color-primary-dark);
+}
+
+/* --- Contact Form Section --- */
+.contact-form-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--color-background);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+}
+.contact-form-wrapper p {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: var(--spacing-sm);
+}
+.form-group .required {
+    color: var(--color-error);
+    margin-left: var(--spacing-xs);
+    font-size: 0.9em;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+.form-actions {
+    text-align: center;
+}
+.button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.button:hover,
+.button:focus {
+    background-color: var(--color-primary-dark);
+}
+#form-status {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    min-height: 1.5rem; /* prevent layout shift */
 }
 
 /* --- Site Footer --- */
